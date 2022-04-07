@@ -1,0 +1,11 @@
+[Unit]
+Description=test
+
+[Service]
+ExecStart=/home/pi/test.sh
+RemainAfterExit=true
+[Install]
+
+WantedBy=multi-user.target
+
+

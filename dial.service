@@ -1,0 +1,11 @@
+[Unit]
+Description=dial
+
+[Service]
+ExecStart=/home/pi/dial.sh
+RemainAfterExit=true
+[Install]
+
+WantedBy=multi-user.target
+
+
