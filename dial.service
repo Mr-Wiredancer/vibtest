@@ -2,7 +2,7 @@
 Description=dial
 
 [Service]
-ExecStart=/home/pi/dial.sh
+ExecStart=/home/pi/vibtest/dial.sh
 RemainAfterExit=true
 [Install]
 

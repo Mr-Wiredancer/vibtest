@@ -2,7 +2,7 @@
 Description=test
 
 [Service]
-ExecStart=/home/pi/test.sh
+ExecStart=/home/pi/vibtest/test.sh
 RemainAfterExit=true
 [Install]
 
