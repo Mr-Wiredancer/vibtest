@@ -81,8 +81,10 @@ def upload_file(fname):
 
 columns = ['time', 'x_acc', 'y_acc', 'z_acc', 'x_ang_acc', 'y_ang_acc', 'z_ang_acc', 'x_ang', 'y_ang', 'z_ang']
 
+machine_id = open('/var/lib/dbus/machine-id').read().strip()
+
 start = int(time.time())
-fout = open(f'data/{start}.csv', 'w')
+fout = open(f'data/{machine_id}_{start}.csv', 'w')
 fout.write(" ".join(columns)+"\n")
 count = 0
 while 1:
@@ -111,9 +113,9 @@ while 1:
         if count == 120*100:
             count = 0
             fout.close()
-            upload_file(f'data/{start}.csv')
+            upload_file(f'data/{machine_id}_{start}.csv')
             start = int(time.time())
-            fout = open(f'data/{start}.csv', 'w')
+            fout = open(f'data/{machine_id}_{start}.csv', 'w')
             fout.write(" ".join(columns)+"\n")
 
     except Exception as e:
